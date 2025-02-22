@@ -1,4 +1,39 @@
 package Models;
 
+import Services.FileStorage;
+
 public class Appointment {
+    private int AppointmentId;
+    private int PatientId;
+    private int DoctorId;
+    private String Date;
+    private String Time;
+    private String Status;
+    public Appointment(){}
+    public Appointment(int AppointmentId,int PatientId,int DoctorId,String Date,String Time,String Status){
+        this.AppointmentId=AppointmentId;
+        this.Date=Date;
+        this.Status=Status;
+        this.PatientId=PatientId;
+        this.DoctorId=DoctorId;
+        this.Time=Time;
+    }
+
+    public int getAppointmentId() {return AppointmentId;}
+    public int getPatientId(){return PatientId;}
+    public int getDoctorId(){return DoctorId;}
+    public String getDate(){return Date;}
+    public String getTime(){return Time;}
+    public String getStatus(){return Status;}
+
+    public void setAppointmentId(){int AppointmentId= FileStorage.getNextAppointmentId();}
+    public void setPatientId(int PatientId){this.PatientId=PatientId;}
+    public void setDoctorId(int DoctorId){this.DoctorId=DoctorId;}
+    public void setDate(String Date){this.Date=Date;}
+    public void setTime(String Time){this.Time=Time;}
+    public void setStatus(String Status){this.Status=Status;}
+
+    public String toString(){
+        return "AppointmentId: "+AppointmentId+", PatientId: "+PatientId+", DoctorId: "+DoctorId+", Date: "+Date+", Time: "+Time+", Status: "+Status;
+    }
 }

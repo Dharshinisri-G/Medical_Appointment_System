@@ -1,9 +1,9 @@
 package Models;
 import com.fasterxml.jackson.annotation.JsonProperty;
-public class Patient extends User {
-    private int PatientID;
-    public Patient(){}
-    public Patient(@JsonProperty("UserId") int UserId,
+public class Doctor extends User {
+    private int DoctorID;
+    public Doctor(){}
+    public Doctor(@JsonProperty("UserId") int UserId,
                    @JsonProperty("UserRole") String UserRole,
                    @JsonProperty("UserName") String UserName,
                    @JsonProperty("Password") String Password,
@@ -14,13 +14,13 @@ public class Patient extends User {
                    @JsonProperty("DateOfBirth") String DateOfBirth,
                    @JsonProperty("Address") String Address,
                    @JsonProperty("Age") int Age,
-                   @JsonProperty("PatientID") int PatientID){
+                   @JsonProperty("DoctorID") int DoctorID){
         super(UserId,UserRole,UserName,Password,Name,email,Contact,Gender,DateOfBirth,Address,Age);
-        this.PatientID=PatientID;
+        this.DoctorID=DoctorID;
     }
-    public int getPatientID(){return PatientID;}
-    public void setPatientID(int PatientID){this.PatientID=PatientID;}
+    public int getDoctorID(){return DoctorID;}
+    public void setDoctorID(int DoctorID){this.DoctorID=DoctorID;}
     public String toString(){
-        return super.toString()+"PatientID :"+PatientID;
+        return super.toString()+"DoctorID :"+DoctorID;
     }
 }
