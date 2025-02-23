@@ -1,14 +1,14 @@
 [ {
-  "email" : "sri@gmail.com",
+  "email" : "dharsh@gmail.com",
   "doctorID" : 1,
-  "userName" : "dharsh_123",
-  "password" : "password123",
+  "age" : 19,
   "userId" : 1,
-  "name" : "Dharshinisri",
-  "address" : "Dharmapuri",
-  "contact" : "1234567890",
-  "age" : 13,
   "gender" : "Female",
-  "dateOfBirth" : "12-09-2005",
-  "userRole" : "Doctor"
+  "contact" : "8754766666",
+  "dateOfBirth" : "17-04-2005",
+  "userRole" : "Doctor",
+  "name" : "Dharshini",
+  "address" : "Dharmapuri",
+  "userName" : "dharsh_17",
+  "password" : "password17"
 } ]

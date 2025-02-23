@@ -1,13 +1,13 @@
 [ {
-  "email" : "slkdfjls",
-  "userName" : "fklsj",
-  "password" : "fghjkl;",
+  "age" : 19,
+  "email" : "dharsh@gmail.com",
   "userId" : 1,
-  "name" : "sdkfjsd",
-  "address" : "slkfjslf",
-  "contact" : "slkdfjls",
-  "age" : 213,
-  "gender" : "sdkfjsd",
-  "dateOfBirth" : "sskdfjsd",
-  "userRole" : "gfhjkl;"
+  "gender" : "Female",
+  "contact" : "8754766666",
+  "dateOfBirth" : "17-04-2005",
+  "userRole" : "Doctor",
+  "name" : "Dharshini",
+  "address" : "Dharmapuri",
+  "userName" : "dharsh_17",
+  "password" : "password17"
 } ]

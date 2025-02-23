@@ -26,12 +26,12 @@ public class Appointment {
     public String getTime(){return Time;}
     public String getStatus(){return Status;}
 
-    public void setAppointmentId(){int AppointmentId= FileStorage.getNextAppointmentId();}
-    public void setPatientId(int PatientId){this.PatientId=PatientId;}
-    public void setDoctorId(int DoctorId){this.DoctorId=DoctorId;}
-    public void setDate(String Date){this.Date=Date;}
-    public void setTime(String Time){this.Time=Time;}
-    public void setStatus(String Status){this.Status=Status;}
+  //  public void setAppointmentId(){int AppointmentId= FileStorage.getNextAppointmentId();}
+    public void setPatientId(int patientId){PatientId=patientId;}
+    public void setDoctorId(int doctorId){DoctorId=doctorId;}
+    public void setDate(String date){Date=date;}
+    public void setTime(String time){Time=time;}
+    public void setStatus(String status){Status=status;}
 
     public String toString(){
         return "AppointmentId: "+AppointmentId+", PatientId: "+PatientId+", DoctorId: "+DoctorId+", Date: "+Date+", Time: "+Time+", Status: "+Status;

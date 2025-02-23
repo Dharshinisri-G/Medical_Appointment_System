@@ -19,7 +19,7 @@ public class Admin extends User {
         this.AdminID=AdminID;
     }
     public int getAdminID(){return AdminID;}
-    public void setAdminID(int AdminID){this.AdminID=AdminID;}
+    public void setAdminID(int adminID){AdminID=adminID;}
     public String toString(){
         return super.toString()+"AdminID :"+AdminID;
     }

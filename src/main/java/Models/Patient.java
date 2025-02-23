@@ -19,7 +19,7 @@ public class Patient extends User {
         this.PatientID=PatientID;
     }
     public int getPatientID(){return PatientID;}
-    public void setPatientID(int PatientID){this.PatientID=PatientID;}
+    public void setPatientID(int patientID){PatientID=patientID;}
     public String toString(){
         return super.toString()+"PatientID :"+PatientID;
     }
