@@ -22,10 +22,12 @@ public class PatientController {
           System.out.println("Patient Successfully Added!");
       }
       public void viewPatients(){
-          System.out.println("The patients in the list are ");
+          int count=0;
           for(Patient patient:patientList){
               System.out.println(patient);
+              count++;
           }
+          if(count==0) System.out.println("No patients available");
       }
 
       public void viewPatientWithId(int id){

@@ -11,10 +11,9 @@ public class Main {
     static  final String invalid_message="Invalid Input! Please try again...🔁";
     static PatientController pc = new PatientController();
     static DoctorController dc=new DoctorController();
-    static AppointmentController ac=new AppointmentController();
+    static AppointmentController ac=new AppointmentController(dc);
     static AdminController adc=new AdminController();
     public static void main(String[] args) {
-
         System.out.println("-----------🙏 Welcome to Medical Appointment System 🏥 ----------");
         while (true) {
             System.out.println("Enter your choice (Register, Login, Exit) ✨");
@@ -172,11 +171,11 @@ public class Main {
 public static void doctorDashboard(int id){
     while(true){
         System.out.println("🩺 Operations You can Do:");
-        System.out.println("1️⃣ View Your Information\n2️⃣ View Appointments\n3️⃣ Exit");
+        System.out.println("1️⃣ View Your Information\n2️⃣ View Appointments\n3️⃣ View Appointments On Date\n4️⃣ Exit");
         System.out.print("👉 Enter your choice: ");
         int choice=x.nextInt();
         x.nextLine();
-        if(choice==3){
+        if(choice==4){
             System.out.println("Logging Out....🚶‍♀️");
             break;
         }
@@ -187,6 +186,10 @@ public static void doctorDashboard(int id){
             case 2:
                 ac.viewAppointmentsWithDoctorId(id);
                 break;
+            case 3:
+                String date=ac.validDate();
+                ac.viewAppointmentsDateForDoctor(id,date);
+                break;
             default:
                 System.out.println(invalid_message);
         }
@@ -196,11 +199,11 @@ public static void doctorDashboard(int id){
 public static void patientDashboard(int id){
     while(true){
         System.out.println("🏥 Operations You can Do:");
-        System.out.println("1️⃣ View Your Information\n2️⃣ View Appointments\n3️⃣ Book Appointments\n4️⃣ Exit");
+        System.out.println("1️⃣ View Your Information\n2️⃣ View Appointments\n3️⃣ View Appointments On Date\n4️⃣ Book Appointments\n5️⃣ Exit");
         System.out.print("👉 Enter your choice: ");
         int choice=x.nextInt();
         x.nextLine();
-        if(choice==4){
+        if(choice==5){
             System.out.println("Logging Out....🚶‍♀️");
             break;
         }
@@ -212,35 +215,37 @@ public static void patientDashboard(int id){
                 ac.viewAppointmentsWithPatientId(id);
                 break;
             case 3:
-                System.out.println("🆔 Enter Appointment Id: ");
+                String date=ac.validDate();
+                ac.viewAppointmentsDateForPatient(id,date);
+                break;
+            case 4:
+                System.out.print("🆔 Enter Appointment Id: ");
                 int appointment_id=x.nextInt();
                 x.nextLine();
                 System.out.println("👨‍⚕️ The Doctors Available in this Hospital:");
                 dc.viewDoctors();
-                System.out.print("🩺 Choose your Doctor: ");
-                int doctor_id=x.nextInt();
-                x.nextLine();
-                System.out.print("📅 Choose Date: ");
-                String date=x.nextLine();
-                ac.addAppointment(appointment_id,doctor_id,id,date);
+                int doctor_id=dc.isDoctorAvailable();
+                String Date=ac.getValidDate();
+                ac.addAppointment(appointment_id,doctor_id,id,Date);
                 break;
             default:
                 System.out.println(invalid_message);
         }
     }
 }
-public static void adminDashboard(int id){
-    while(true){
+
+    public static void adminDashboard(int id){
+    while(true) {
         System.out.println("🛠️ Operations You can Do:");
-        System.out.println("1️⃣ View Your Information\n2️⃣ View Doctors\n3️⃣ View Patients\n4️⃣ View Appointments\n5️⃣ Exit");
+        System.out.println("1️⃣ View Your Information\n2️⃣ View Doctors\n3️⃣ View Patients\n4️⃣ View Appointments\n5️⃣ View Appointments On Date\n6️⃣ Exit");
         System.out.print("👉 Enter your choice: ");
-        int choice=x.nextInt();
+        int choice = x.nextInt();
         x.nextLine();
-        if(choice==5){
+        if (choice == 6) {
             System.out.println("Logging Out....🚶‍♀️");
             break;
         }
-        switch(choice){
+        switch (choice) {
             case 1:
                 adc.viewAdmin(id);
                 break;
@@ -253,9 +258,15 @@ public static void adminDashboard(int id){
             case 4:
                 ac.viewAppointments();
                 break;
+            case 5:
+                String Date=ac.validDate();
+                ac.viewAppointmentsOnDate(Date);
+                break;
             default:
                 System.out.println(invalid_message);
         }
     }
-}
+    }
+
+
 }

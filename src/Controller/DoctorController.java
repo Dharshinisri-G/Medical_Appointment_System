@@ -4,11 +4,10 @@ import java.util.*;
 
 public class DoctorController {
     private List<Doctor> doctorList;
-
+    static final Scanner x=new Scanner(System.in);
     public DoctorController(){
         doctorList=new ArrayList<>();
     }
-
     public boolean validDoctor(int id,String password){
         for(Doctor doctor:doctorList){
             if(doctor.getDoctorId()==id && doctor.getPassword().equals(password))
@@ -24,9 +23,12 @@ public class DoctorController {
     }
 
     public void viewDoctors(){
+        int count=0;
         for(Doctor doctor:doctorList){
             System.out.println(doctor);
+            count++;
         }
+        if(count==0) System.out.println("No Doctors available.");
     }
 
     public void viewDoctorWithId(int id){
@@ -60,4 +62,25 @@ public class DoctorController {
         }
         System.out.println("No doctor exist with that id");
     }
+
+    public int slotOfDoctor(int id){
+        for(Doctor doctor:doctorList){
+            if(doctor.getDoctorId()==id)
+                return doctor.getSlot();
+        }
+        return -1;
+    }
+
+    public int isDoctorAvailable(){
+        while(true){
+            System.out.print("🩺Choose Doctor:");
+            int id=x.nextInt();
+            for(Doctor doctor:doctorList){
+                if(doctor.getDoctorId()==id)
+                    return id;
+            }
+            System.out.println("❌ Invalid Id.Enter a valid Doctor Id.");
+        }
+    }
+
 }
