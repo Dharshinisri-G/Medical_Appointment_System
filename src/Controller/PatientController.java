@@ -51,9 +51,8 @@ public class PatientController {
       public void deletePatientWithId(int id){
           Iterator<Patient> i=patientList.iterator();
           while(i.hasNext()){
-              Patient patient=i.next();
-              if(patient.getPatientId()==id){
-                  patientList.remove(patient);
+              if(i.next().getPatientId()==id){
+                  i.remove();
                   viewPatients();
                   return;
               }

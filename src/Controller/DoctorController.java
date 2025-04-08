@@ -44,9 +44,8 @@ public class DoctorController {
     public void deleteDoctorWithId(int id){
         Iterator<Doctor> i=doctorList.iterator();
         while(i.hasNext()){
-            Doctor doctor=i.next();
-            if(doctor.getDoctorId()==id) {
-                doctorList.remove(doctor);
+            if(i.next().getDoctorId()==id) {
+                i.remove();
                 return;
             }
         }
