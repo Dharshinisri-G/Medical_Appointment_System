@@ -59,4 +59,3 @@ This is a simple **Java console-based Medical Appointment System** that allows d
 - Using Java Collections effectively
 
 ---
-#java #oop #mvc #console-app #project #appointmentsystem
